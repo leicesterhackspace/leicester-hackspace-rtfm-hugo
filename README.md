@@ -1,5 +1,5 @@
 # Leicester Hackspace Hugo Theme
-The custom theme used by the [Leicester Hackspace website](https://leicesterhackspace.org.uk/) intended for 
+The custom theme used by the [Leicester Hackspace website](https://leicesterhackspace.org.uk/) intended for
 documentation.
 
 ## Features

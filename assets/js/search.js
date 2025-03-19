@@ -8,7 +8,7 @@ const BASE_URL = document.documentElement.dataset.siteUrl;
  * Make a single search result
  *
  * @param {ResultData} result The result data representing a search result
- * @returns {HTMLAnchorElement} An element represeting the given search result
+ * @returns {HTMLAnchorElement} An element representing the given search result
  */
 function makeSearchResult(result) {
     const container = document.createElement("a");
