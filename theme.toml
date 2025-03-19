@@ -1,0 +1,20 @@
+name = 'Leicester Hackspace RTFM Theme'
+license = 'MIT'
+licenselink = 'https://github.com/leicesterhackspace/leicester-hackspace-web/blob/master/themes/hackspace-theme/LICENSE'
+description = 'A theme for documentation for The Leicester Hackspace'
+
+# The home page of the theme, where the source can be found
+homepage = 'https://github.com/leicesterhackspace/leicester-hackspace-hugo-rtfm'
+
+# If you have a running demo of the theme
+#demosite = ''
+
+# Taxonomy terms
+tags = ['hackspace', 'docs']
+features = ['Responsive layout']
+
+# If the theme has multiple authors
+authors = [
+  {name = 'Jacob Lucas', homepage = 'jacob-lucas.uk'},
+  {name = 'Daniel Warren'}
+]

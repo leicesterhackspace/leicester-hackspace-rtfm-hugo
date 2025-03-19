@@ -1,0 +1,38 @@
+baseURL = 'https://leicesterhackspace.org.uk/'
+languageCode = 'en-gb'
+title = 'The theme for Leicester Hackspace documentation'
+
+[params]
+# The image at the front of the navbar on the mobile site, relative to /assets
+siteImage = "/img/icon.svg"
+# The favicon of the site
+siteFavIcon = "/img/icon.svg"
+
+[params.pagination]
+# The maximum number of posts on each page of the pagination
+postsPerPage = 5
+
+# The number of page links on the pagination pages bar to have either side of the current page
+adjacentLinks = 3
+
+
+[[menus.main]]
+name = 'Home'
+pageRef = '/'
+weight = 10
+
+[[menus.main]]
+name = 'Tags'
+pageRef = '/tags'
+weight = 30
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = "0.116.0"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        block = true

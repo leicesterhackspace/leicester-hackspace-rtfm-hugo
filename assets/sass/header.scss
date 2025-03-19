@@ -1,0 +1,45 @@
+@use "sass:map";
+@use "include/colour";
+
+header {
+  position: sticky;
+  top: 0;
+  height: 30px;
+  padding: 5px;
+
+  background: map.get(colour.$color-surface-map, 200);
+
+  .dark-mode & {
+    background: map.get(colour.$color-surface-map, 950);
+    border-bottom: 0;
+  }
+
+  border-bottom: 2px black outset;
+
+  .nav-hamburger {
+    position: relative;
+    height: 30px;
+    width: 30px;
+
+    cursor: pointer;
+
+    svg {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      color: colour.$color-primary;
+
+      transition: rotate 300ms ease-in-out;
+    }
+
+    &.nav-toggled {
+      svg {
+        rotate: 180deg;
+      }
+    }
+
+    &:hover {
+      background-color: #0000001e;
+    }
+  }
+}

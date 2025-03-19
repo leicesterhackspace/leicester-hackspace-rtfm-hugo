@@ -1,0 +1,65 @@
+@use "sass:map";
+@use "include/colour.scss";
+
+body {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  margin: 0;
+
+  font-family: sans-serif;
+  background: map.get(colour.$color-surface-map, 50);
+  color: colour.$color-primary-contrast-dark;
+
+  &.dark-mode {
+    background: map.get(colour.$color-surface-map, 900);
+    color: colour.$color-primary-contrast-light;
+  }
+}
+
+.page-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+
+  main {
+    padding: 10px;
+    flex-grow: 1;
+    margin: auto;
+
+    width: 1000px;
+
+
+    @media (max-width: 1300px) {
+      width: unset;
+      margin: 0
+    }
+
+    h1.header, h2.header {
+      color: map.get(colour.$color-primary-map, 300);
+
+      a {
+        color: inherit;
+      }
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  a {
+    color: map.get(colour.$color-tertiary-map, 700);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  iframe {
+    margin-top: 20px;
+  }
+}

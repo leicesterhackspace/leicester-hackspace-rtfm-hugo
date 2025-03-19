@@ -1,0 +1,15 @@
+@use "sass:map";
+@use "include/colour.scss";
+
+footer {
+  border-top: 2px inset black;
+  margin-top: 1rem;
+
+  background-color: map.get(colour.$color-surface-map, 200);
+  color: map.get(colour.$color-surface-contrast-map, 200);
+
+  .dark-mode & {
+    background-color: map.get(colour.$color-surface-map, 950);
+    color: map.get(colour.$color-surface-contrast-map, 950);
+  }
+}

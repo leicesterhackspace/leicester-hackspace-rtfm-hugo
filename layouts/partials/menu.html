@@ -1,0 +1,65 @@
+{{- /*
+Renders a menu for the given menu ID.
+
+@context {page} page The current page.
+@context {string} menuID The menu ID.
+
+@example: {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+*/}}
+
+{{- $page := .page }}
+{{- $menuID := .menuID }}
+
+{{- with index site.Menus $menuID }}
+    <nav class="toggled">
+        <button class="dismiss">
+            {{ "static/icons/fas-xmark.svg" | readFile | safeHTML }}
+        </button>
+        <a href="/" class="index">
+            <span class="title">
+                {{ "static/icons/fas-home.svg" | readFile | safeHTML }}
+                {{ site.Title }}
+            </span>
+            {{ "assets/img/hackspace-logo-inverted.svg" | readFile | safeHTML }}
+        </a>
+        <div class="sep"></div>
+        <div class="search">
+            <input id="search-input" type="search" autocomplete="off"/>
+            <button id="search-button">{{ "static/icons/fas-magnifying-glass.svg" | readFile | safeHTML }}</button>
+        </div>
+        <div class="sep"></div>
+        <div id="nav-wrap">
+            {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+        </div>
+    </nav>
+{{- end }}
+
+{{- define "partials/inline/menu/walk.html" }}
+    {{- $page := .page }}
+    {{- range .menuEntries }}
+        {{- $attrs := dict "href" .URL }}
+        {{- if $page.IsMenuCurrent .Menu . }}
+            {{- $attrs = merge $attrs (dict "class" "active" "aria-current" "page") }}
+        {{- else if $page.HasMenuCurrent .Menu . }}
+            {{- $attrs = merge $attrs (dict "class" "ancestor" "aria-current" "true") }}
+        {{- end }}
+        <a
+                {{- range $k, $v := $attrs }}
+                    {{- with $v }}
+                        {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+                    {{- end }}
+                {{- end -}}
+        >
+            {{- with .Params.icon }}
+                {{- with resources.Get . }}
+                {{- end }}
+            {{- end }}
+            {{ or (T .Identifier) .Name | safeHTML }}
+        </a>
+        {{- with .Children }}
+            <div>
+                {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+            </div>
+        {{- end }}
+    {{- end }}
+{{- end }}

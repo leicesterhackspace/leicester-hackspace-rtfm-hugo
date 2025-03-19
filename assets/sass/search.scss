@@ -1,0 +1,29 @@
+@use "sass:map";
+@use "include/colour";
+
+#search-container {
+
+  .search-result {
+    display: block;
+    padding: 5px;
+    margin: 10px 5px;
+
+    border: 1px solid black;
+    border-radius: 5px;
+
+    &:hover {
+      text-decoration: none;
+      background: #00000010;
+    }
+
+    h2 {
+      margin-top: 0;
+
+      color: colour.$color-surface-contrast-dark;
+    }
+
+    p {
+      color: #444;
+    }
+  }
+}
