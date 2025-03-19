@@ -1,4 +1,10 @@
 /**
+ * The URL of the server (Since we cannot rely on / being the site root)
+ * @type {string}
+ */
+const BASE_URL = document.documentElement.dataset.siteUrl;
+
+/**
  * Make a single search result
  *
  * @param {ResultData} result The result data representing a search result
@@ -61,7 +67,7 @@ async function handleSearchInput(event, pagefind) {
 }
 
 window.addEventListener('DOMContentLoaded', async () => {
-    const pagefind = await import("/pagefind/pagefind.js");
+    const pagefind = await import(`${BASE_URL}/pagefind/pagefind.js`);
     await pagefind.options({
         highlightParam: "highlight"
     });

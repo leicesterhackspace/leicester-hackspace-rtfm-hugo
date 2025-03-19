@@ -5,6 +5,12 @@
 let timeoutHandle;
 
 /**
+ * The URL of the server (Since we cannot rely on / being the site root)
+ * @type {string}
+ */
+const BASE_URL = document.documentElement.dataset.siteUrl;
+
+/**
  * Event method for when a search is submitted
  *
  * @param {Event} event Handle for the event
@@ -21,7 +27,7 @@ function searchEvent(event) {
         return;
     };
 
-    window.location.href = "/search?q=" + search;
+    window.location.href = `${BASE_URL}/search?q=${search}`;
 }
 
 window.addEventListener("load", async () => {
@@ -48,6 +54,6 @@ window.addEventListener("load", async () => {
         });
 
 
-    await import('/pagefind/pagefind-highlight.js');
+    await import(`${BASE_URL}/pagefind/pagefind-highlight.js`);
     new PagefindHighlight({highlightParam: "highlight"});
 })

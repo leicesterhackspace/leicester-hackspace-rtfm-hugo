@@ -15,7 +15,7 @@ Renders a menu for the given menu ID.
         <button class="dismiss">
             {{ "static/icons/fas-xmark.svg" | readFile | safeHTML }}
         </button>
-        <a href="/" class="index">
+        <a href="{{absURL ""}}" class="index">
             <span class="title">
                 {{ "static/icons/fas-home.svg" | readFile | safeHTML }}
                 {{ site.Title }}
