@@ -1,6 +1,10 @@
 @use "sass:map";
 @use "include/colour";
 
+html {
+  scroll-padding-top: 50px;
+}
+
 header {
   position: sticky;
   top: 0;
