@@ -1,7 +1,9 @@
 <div class="container side-by-side">
   <p>
     Leicester Hackspace Ltd is a not-for-profit company limited by guarantee (No. 08833126).<br/>
-    <a href="https://github.com/leicesterhackspace/rules">View my source on GitHub</a>
+    {{ if (not (eq site.Params.siteSourceLink "")) }}
+      <a href="{{ site.Params.siteSourceLink }}">View my source on GitHub</a>
+    {{ end }}
   </p>
   <p>
     info@leicesterhackspace.org.uk<br/>

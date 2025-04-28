@@ -7,6 +7,8 @@ title = 'The theme for Leicester Hackspace documentation'
 siteImage = "/img/icon.svg"
 # The favicon of the site
 siteFavIcon = "/img/icon.svg"
+# The link to use for the source of the site
+siteSourceLink = ""
 
 [params.pagination]
 # The maximum number of posts on each page of the pagination
