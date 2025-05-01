@@ -12,6 +12,7 @@
             {{ partial "header.html" . }}
         </header>
         <main class="container{{ with .Type }}-{{ . }}{{ end }}{{ with .Slug }} {{ lower . }}{{ end }}">
+            {{ partial "banner.md" . | markdownify | safeHTML }}
             {{ block "main" . }}{{ end }}
         </main>
         <footer>
