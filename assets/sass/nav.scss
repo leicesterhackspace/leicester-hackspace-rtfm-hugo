@@ -57,6 +57,18 @@ nav {
     .dismiss {
       display: block;
     }
+
+    // Invert toggle behaviour
+
+    visibility: visible;
+    max-width: 300px;
+    min-width: unset;
+
+    &.toggled {
+      visibility: collapse;
+      max-width: 0;
+      min-width: 0;
+    }
   }
 
   .sep {
